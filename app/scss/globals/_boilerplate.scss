@@ -1,0 +1,70 @@
+@use '../util' as u;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-size: u.rem(16);
+  font-weight: 400;
+  background-color: var(--main-bg);
+  color: var(--clr-body-text);
+}
+
+input,
+button,
+textarea {
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: var(--clr-white);
+    padding: 0.5rem;
+    border: 1px solid;
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}

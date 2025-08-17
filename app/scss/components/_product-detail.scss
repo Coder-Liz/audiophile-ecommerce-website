@@ -1,0 +1,253 @@
+@use '../util' as u;
+
+.product-detail {
+  padding-block: u.rem(16) u.rem(120);
+
+  @include u.breakpoint(small) {
+    padding-block: u.rem(32) u.rem(120);
+  }
+
+  @include u.breakpoint(large) {
+    padding-block: u.rem(80) u.rem(160);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+  }
+
+  &__back-btn {
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+    margin-bottom: u.rem(64);
+
+    @include u.breakpoint(small) {
+      flex-direction: row;
+      gap: u.rem(69);
+      align-items: center;
+      margin-bottom: u.rem(96);
+    }
+
+    @include u.breakpoint(large) {
+      gap: u.rem(125);
+      margin-bottom: u.rem(136);
+    }
+  }
+
+  .image {
+    border-radius: u.rem(8);
+  }
+
+  &__image {
+    @include u.breakpoint(small) {
+      max-height: u.rem(480);
+    }
+
+    @include u.breakpoint(large) {
+      max-height: u.rem(560);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+    align-items: flex-start;
+
+    @include u.breakpoint(small) {
+      max-width: u.rem(340);
+      gap: u.rem(32);
+    }
+
+    @include u.breakpoint(large) {
+      max-width: u.rem(445);
+    }
+  }
+
+  &__title-span {
+    //margin-bottom: u.rem(24);
+    //color: var(--clr-orange);
+  }
+
+  &__description {
+  }
+
+  &__price {
+    font-size: u.rem(18);
+    font-weight: 700;
+    letter-spacing: 0.072em;
+    line-height: 1;
+    color: var(--clr-black);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: u.rem(16);
+  }
+
+  &__quantity-btns {
+    width: u.rem(120);
+    height: u.rem(48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: u.rem(8);
+    background-color: var(--clr-very-light-grey);
+  }
+
+  &__minus,
+  &__plus {
+    font-size: u.rem(16);
+    font-weight: 700;
+    padding: u.rem(8);
+    color: var(--clr-black);
+
+    &:hover {
+      color: var(--clr-orange);
+    }
+  }
+
+  &__quantity {
+    font-size: u.rem(13);
+    font-weight: 700;
+    color: var(--clr-black);
+  }
+
+  &__add-btn {
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(88);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(120);
+    }
+
+    @include u.breakpoint(large) {
+      flex-direction: row;
+      gap: u.rem(125);
+    }
+  }
+
+  &__text-wrapper {
+    display: grid;
+    gap: u.rem(24);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(32);
+    }
+
+    @include u.breakpoint(large) {
+      max-width: u.rem(635);
+    }
+  }
+
+  &__freebies {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(32);
+    }
+  }
+
+  &__freebies-lists {
+    display: grid;
+    gap: u.rem(8);
+  }
+
+  &__freebies-item {
+    display: flex;
+    gap: u.rem(24);
+
+    span {
+      color: var(--clr-orange);
+    }
+  }
+
+  &__image-gallery-wrapper {
+    display: grid;
+    gap: u.rem(20);
+    margin-block: u.rem(64) u.rem(96);
+
+    @include u.breakpoint(small) {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: u.rem(18);
+      margin-block-start: u.rem(96);
+    }
+
+    @include u.breakpoint(large) {
+      gap: u.rem(30);
+      margin-block: u.rem(136);
+    }
+  }
+
+  &__pic {
+    @include u.breakpoint(small) {
+      &:nth-child(1) {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+      }
+
+      &:nth-child(2) {
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+      }
+
+      &:nth-child(3) {
+        grid-column: 6 / -1;
+        grid-row: 1 / -1;
+      }
+    }
+  }
+
+  &__recommended {
+    display: grid;
+    gap: u.rem(40);
+    text-align: center;
+
+    @include u.breakpoint(small) {
+      gap: u.rem(56);
+    }
+
+    @include u.breakpoint(large) {
+      gap: u.rem(64);
+    }
+  }
+
+  &__card-wrapper {
+    display: grid;
+    gap: u.rem(56);
+
+    @include u.breakpoint(small) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: u.rem(11);
+    }
+
+    @include u.breakpoint(large) {
+      gap: u.rem(30);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+    align-items: center;
+  }
+
+  &__recommended-pic {
+    @include u.breakpoint(small) {
+      margin-bottom: u.rem(8);
+    }
+  }
+}

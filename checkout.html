@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+    <link rel="stylesheet" href="/dist/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <button
+          type="button"
+          id="openButton"
+          class="header__open-menu"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mainMenu"
+        >
+          <img
+            class="header__hamburger-menu"
+            src="/assets/shared/tablet/icon-hamburger.svg"
+            alt="open menu icon"
+            aria-hidden="true"
+            width="16"
+            height="15"
+          />
+        </button>
+        <a href="/" class="header__home-link" aria-label="Home">
+          <img
+            class="header__logo"
+            src="/assets/shared/desktop/logo.svg"
+            alt="Audiophile logo"
+            width="143"
+            height="25"
+          />
+        </a>
+        <nav class="header__nav">
+          <span id="nav-label" hidden>Navigation</span>
+          <ul class="header__links desktop-only">
+            <li class="header__item">
+              <a href="/" class="header__link">Home</a>
+            </li>
+            <li class="header__item">
+              <a href="headphones.html" class="header__link">Headphones</a>
+            </li>
+            <li class="header__item">
+              <a href="speakers.html" class="header__link">Speakers</a>
+            </li>
+            <li class="header__item">
+              <a href="earphones.html" class="header__link">Earphones</a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          type="button"
+          id="cartButton"
+          class="header__cart-btn"
+          aria-label="View cart"
+        >
+          <img
+            class="header__cart-icon"
+            src="/assets/shared/desktop/icon-cart.svg"
+            alt=""
+            width="23"
+            height="20"
+            aria-hidden="true"
+          />
+        </button>
+        <div class="header__nav-overlay"></div>
+        <nav
+          id="mainMenu"
+          class="header__nav-mobile-tablet"
+          aria-labelledby="nav-label-mobile"
+        >
+          <span id="nav-label-mobile" hidden>Mobile and Tablet Navigation</span>
+          <div class="header__mobile-menu-content">
+            <div class="header__card-component">
+              <img
+                class="header__image"
+                src="/assets/shared/desktop/image-category-headphones.png"
+                alt="Headphones"
+              />
+              <div class="header__mask-overlay"></div>
+              <div class="header__content">
+                <h3 class="header__title">Headphones</h3>
+                <a
+                  href="headphones.html"
+                  class="button btn-three header__cta"
+                  role="button"
+                >
+                  Shop
+                  <img
+                    src="/assets/shared/desktop/icon-arrow-right.svg"
+                    alt=""
+                    width="8"
+                    height="12"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="header__card-component">
+              <img
+                class="header__image"
+                src="/assets/shared/desktop/image-category-speakers.png"
+                alt="Speakers"
+              />
+              <div class="header__mask-overlay"></div>
+              <div class="header__content">
+                <h3 class="header__title">Speakers</h3>
+                <a
+                  href="speakers.html"
+                  class="button btn-three header__cta"
+                  role="button"
+                >
+                  Shop
+                  <img
+                    src="/assets/shared/desktop/icon-arrow-right.svg"
+                    alt=""
+                    width="8"
+                    height="12"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="header__card-component">
+              <img
+                class="header__image"
+                src="/assets/shared/desktop/image-category-earphones.png"
+                alt="Earphones"
+              />
+              <div class="header__mask-overlay"></div>
+              <div class="header__content">
+                <h3 class="header__title">Earphones</h3>
+                <a
+                  href="earphones.html"
+                  class="button btn-three header__cta"
+                  role="button"
+                >
+                  Shop
+                  <img
+                    src="/assets/shared/desktop/icon-arrow-right.svg"
+                    alt=""
+                    width="8"
+                    height="12"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="checkout">
+        <div class="wrapper checkout__wrapper">
+          <a class="backBtn checkout__back-btn" href="#">Go back</a>
+          <form class="checkout__form" novalidate>
+            <div class="checkout__form-sections">
+              <h2 class="checkout__title">Checkout</h2>
+              <!-- Billing Details -->
+              <fieldset class="checkout__fieldset">
+                <legend class="checkout__legend">Billing Details</legend>
+                <div class="checkout__row">
+                  <div class="checkout__group">
+                    <label for="name" class="checkout__label"
+                      >Name
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Alexei Ward"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="checkout__group">
+                    <label for="email" class="checkout__label"
+                      >Email Address
+                      <span class="checkout__error-message"
+                        >Wrong format</span
+                      ></label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="alexei@mail.com"
+                      required
+                      autocomplete="email"
+                      readonly
+                      onfocus="this.removeAttribute('readonly')"
+                    />
+                  </div>
+                  <div class="checkout__group">
+                    <label for="phone" class="checkout__label"
+                      >Phone Number
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+1 202-555-0136"
+                      required
+                      autocomplete="tel"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Shipping Info -->
+              <fieldset class="checkout__fieldset">
+                <legend class="checkout__legend">Shipping Info</legend>
+                <div class="checkout__group address">
+                  <label for="address" class="checkout__label"
+                    >Your Address
+                    <span class="checkout__error-message"
+                      >Can't be empty</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="1137 Williams Avenue"
+                    required
+                    autocomplete="street-address"
+                  />
+                </div>
+                <div class="checkout__row">
+                  <div class="checkout__group">
+                    <label for="zip" class="checkout__label"
+                      >ZIP Code
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="zip"
+                      name="zip"
+                      placeholder="10001"
+                      required
+                      autocomplete="postal-code"
+                    />
+                  </div>
+                  <div class="checkout__group">
+                    <label for="city" class="checkout__label"
+                      >City
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      placeholder="New York"
+                      required
+                      autocomplete="address-level2"
+                    />
+                  </div>
+                  <div class="checkout__group">
+                    <label for="country" class="checkout__label"
+                      >Country
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      placeholder="United States"
+                      required
+                      autocomplete="country-name"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Payment Details -->
+              <fieldset class="checkout__fieldset">
+                <legend class="checkout__legend">Payment Details</legend>
+                <div
+                  class="checkout__group payment-methods"
+                  role="radiogroup"
+                  aria-labelledby="payment-label"
+                >
+                  <span id="payment-label" class="checkout__label-payment"
+                    >Payment Method</span
+                  >
+                  <div class="checkout__payment-methods">
+                    <label class="checkout__radio-label">
+                      <input
+                        type="radio"
+                        name="payment"
+                        value="emoney"
+                        checked
+                      />
+                      e-Money
+                    </label>
+                    <label class="checkout__radio-label">
+                      <input type="radio" name="payment" value="cash" />
+                      Cash on Delivery
+                    </label>
+                  </div>
+                </div>
+                <div class="checkout__row e-money">
+                  <div class="checkout__group">
+                    <label for="emoney-number" class="checkout__label"
+                      >e-Money Number
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="emoney-number"
+                      name="emoney-number"
+                      placeholder="238521993"
+                      pattern="\d{9,}"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="checkout__group">
+                    <label for="emoneycode" class="checkout__label"
+                      >e-Money PIN
+                      <span class="checkout__error-message"
+                        >Can't be empty</span
+                      ></label
+                    >
+                    <input
+                      type="password"
+                      id="emoneycode"
+                      name="emoneycode"
+                      placeholder="6891"
+                      pattern="\d{4,}"
+                      autocomplete="off"
+                      readonly
+                      onfocus="this.removeAttribute('readonly')"
+                    />
+                  </div>
+                </div>
+                <div class="checkout__cash-on-delivery hidden">
+                  <img
+                    src="/assets/checkout/icon-cash-on-delivery.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="checkout__text">
+                    The ‘Cash on Delivery’ option enables you to pay in cash
+                    when our delivery courier arrives at your residence. Just
+                    make sure your address is correct so that your order will
+                    not be cancelled.
+                  </p>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Summary Info -->
+            <div class="checkout__summary">
+              <h3 class="checkout__subheading">Summary</h3>
+              <ul class="checkout__items">
+                <!-- JS will inject items here -->
+              </ul>
+              <p class="checkout__total">
+                Total <span class="checkout__total-amount">$0</span>
+              </p>
+              <p class="checkout__shipping">
+                Shipping <span class="checkout__shipping-fee">$0</span>
+              </p>
+              <p class="checkout__vat">
+                VAT (Included) <span class="checkout__vat-amount">$0</span>
+              </p>
+              <p class="checkout__grand-total">
+                Grand Total
+                <span class="checkout__grand-total-amount" aria-live="polite"
+                  >$0</span
+                >
+              </p>
+              <button type="submit" class="button checkoutBtn">
+                Continue & pay
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" aria-label="Site footer">
+      <div class="wrapper footer__wrapper">
+        <div class="footer__line"></div>
+        <a href="/" class="footer__home-link" aria-label="Home">
+          <img
+            class="footer__logo"
+            src="/assets/shared/desktop/logo.svg"
+            alt="Audiophile"
+            width="143"
+            height="25"
+          />
+        </a>
+        <ul class="footer__links">
+          <li class="footer__item">
+            <a href="/" class="footer__link">Home</a>
+          </li>
+          <li class="footer__item">
+            <a href="headphones.html" class="footer__link">Headphones</a>
+          </li>
+          <li class="footer__item">
+            <a href="speakers.html" class="footer__link">Speakers</a>
+          </li>
+          <li class="footer__item">
+            <a href="earphones.html" class="footer__link">Earphones</a>
+          </li>
+        </ul>
+        <p class="footer__description">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+        <p class="footer__copyright">Copyright 2021. All Rights Reserved</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Audiophile on Facebook">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"
+                fill="#FFF"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Audiophile on Twitter">
+            <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z"
+                fill="#FFF"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Audiophile on Instagram">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                fill="#FFF"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <dialog id="orderConfirmationModal" class="confirmation-modal">
+      <div class="confirmation-modal__content">
+        <img
+          src="/assets/checkout/icon-order-confirmation.svg"
+          alt="Order Confirmed"
+          class="confirmation-modal__icon"
+        />
+        <h2 class="confirmation-modal__title">
+          Thank you <br />
+          for your order
+        </h2>
+        <p class="confirmation-modal__message">
+          You will receive an email confirmation shortly.
+        </p>
+        <div class="confirmation-modal__summary">
+          <ul class="confirmation-modal__items"></ul>
+          <div class="confirmation-modal__grand-total-wrapper">
+            <p class="confirmation-modal__grand-total-label">Grand Total</p>
+            <p class="confirmation-modal__grand-total-amount">$0</p>
+          </div>
+        </div>
+        <a href="#" class="button btn-one confirmation-modal__back-home-btn">
+          Back to home
+        </a>
+      </div>
+    </dialog>
+    <script src="/app/js/checkout-script.js"></script>
+    <script src="/app/js/script.js"></script>
+  </body>
+</html>

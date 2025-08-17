@@ -1,0 +1,38 @@
+:root {
+  --clr-orange: #d97e4a;
+  --clr-light-orange: #fbaf85;
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-dark-grey: #191919;
+  --clr-very-light-grey: #f1f1f1;
+  --clr-very-light-blue: #fafafa;
+  --clr-grey: #e1e1e1;
+  --clr-nav-overlay: hsla(270, 3%, 11%, 0.7);
+
+  --main-bg: var(--clr-very-light-blue);
+  --header-border-bottom: hsla(0, 0%, 100%, 10.4%);
+  --hero-overlay: hsl(0, 0%, 10%, 0.8);
+  --text-light: hsla(0, 0%, 100%, 75%);
+  --clr-body-text: hsla(0, 0%, 0%, 50%);
+  --clr-quantity-symbol: hsla(0, 0%, 0%, 25%);
+
+  --button-one-bg: var(--clr-orange);
+  --button-one-text: var(--clr-white);
+  --button-one-bg-hover: var(--clr-light-orange);
+  --button-one-black-bg: #000000;
+  --button-one-black-bg-hover: #4c4c4c;
+
+  --button-two-bg: transparent;
+  --button-two-text: var(--clr-black);
+  --button-two-bg-hover: var(--clr-black);
+  --button-two-text-hover: var(--clr-white);
+
+  --button-three-text: hsla(0, 0%, 0%, 50%);
+  --button-three-text-hover: var(--clr-orange);
+
+  --form-border-color: #cfcfcf;
+  --clr-placeholder: hsla(0, 0%, 0%, 40%);
+  --clr-error: #cd2c2c;
+  --box-shadow: hsla(0, 0%, 24%, 0.1);
+  --clr-half-white: hsla(0, 0%, 100%, 0.5);
+}

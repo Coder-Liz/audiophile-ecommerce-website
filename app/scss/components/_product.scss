@@ -1,0 +1,92 @@
+@use '../util' as u;
+
+.product {
+  padding-block: u.rem(64) u.rem(120);
+
+  @include u.breakpoint(small) {
+    padding-block: u.rem(120);
+  }
+
+  @include u.breakpoint(large) {
+    padding-block: u.rem(160);
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: u.rem(120);
+
+    @include u.breakpoint(large) {
+      gap: u.rem(160);
+    }
+  }
+
+  &__card-component {
+    display: grid;
+    gap: u.rem(32);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(52);
+    }
+
+    @include u.breakpoint(large) {
+      display: flex;
+      align-items: center;
+      gap: u.rem(125);
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__picture {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include u.breakpoint(large) {
+      max-width: u.rem(540);
+      max-height: u.rem(560);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+    align-items: center;
+    text-align: center;
+    max-width: u.rem(572);
+    justify-self: center;
+
+    @include u.breakpoint(large) {
+      align-items: flex-start;
+      text-align: left;
+      max-width: u.rem(445);
+      justify-self: unset;
+    }
+  }
+
+  &__title {
+    @include u.breakpoint(small) {
+      width: 20ch;
+      margin-bottom: u.rem(8);
+    }
+  }
+
+  &__title-span {
+    //margin-bottom: u.rem(24);
+    //color: var(--clr-orange);
+  }
+
+  &__description {
+  }
+
+  &__cta-btn {
+  }
+}

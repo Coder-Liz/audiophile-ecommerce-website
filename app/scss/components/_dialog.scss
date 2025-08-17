@@ -1,0 +1,148 @@
+@use '../util' as u;
+
+.cart-dialog {
+  position: fixed;
+  top: u.rem(114);
+  left: auto;
+  right: u.rem(24);
+  bottom: auto;
+  width: min(100% - u.rem(48));
+  max-width: u.rem(377);
+  padding: u.rem(32);
+  border: none;
+  border-radius: u.rem(8);
+  background-color: var(--clr-white);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  @include u.breakpoint(large) {
+    top: u.rem(129);
+    right: u.rem(165);
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+  }
+
+  &__header,
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: u.rem(18);
+    font-weight: 700;
+    color: var(--clr-black);
+  }
+
+  &__remove-all {
+    font-size: u.rem(15);
+    font-weight: 500;
+    color: var(--clr-body-text);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: u.rem(24);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: u.rem(64) 1fr auto;
+    gap: u.rem(16);
+    align-items: center;
+  }
+
+  &__image {
+    width: u.rem(64);
+    height: u.rem(64);
+    border-radius: u.rem(8);
+  }
+
+  &__info {
+    display: grid;
+  }
+
+  &__item-name {
+    font-size: u.rem(15);
+    font-weight: 700;
+    color: var(--clr-black);
+  }
+
+  &__price {
+    font-size: u.rem(14);
+    font-weight: 700;
+    color: var(--clr-body-text);
+  }
+
+  &__quantity {
+    width: u.rem(96);
+    height: u.rem(48);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--clr-very-light-grey);
+    justify-self: end;
+
+    @include u.breakpoint(small) {
+      width: u.rem(96);
+    }
+  }
+
+  &__qty-btn {
+    font-size: u.rem(16);
+    font-weight: 700;
+    padding: u.rem(8);
+    color: var(--clr-quantity-symbol);
+
+    &:hover {
+      color: var(--clr-orange);
+    }
+  }
+
+  &__item-qty {
+    font-size: u.rem(13);
+    font-weight: 700;
+    color: var(--clr-black);
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+  }
+
+  &__total {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      font-size: u.rem(15);
+      font-weight: 500;
+      color: var(--clr-body-text);
+    }
+
+    strong {
+      font-size: u.rem(18);
+      font-weight: 700;
+      color: var(--clr-black);
+    }
+  }
+
+  &__checkout-btn {
+  }
+}

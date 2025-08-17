@@ -1,0 +1,88 @@
+@use '../util' as u;
+
+.about {
+  padding-block: u.rem(120);
+
+  @include u.breakpoint(small) {
+    padding-block: u.rem(96);
+  }
+
+  @include u.breakpoint(large) {
+    padding-block: u.rem(120);
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: u.rem(40);
+    text-align: center;
+
+    @include u.breakpoint(large) {
+      grid-template-columns: repeat(12, 1fr);
+      gap: u.rem(30);
+      text-align: left;
+      align-items: center;
+    }
+  }
+  &__picture {
+    @include u.breakpoint(large) {
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+    max-width: u.rem(573);
+
+    @include u.breakpoint(small) {
+      justify-self: center;
+    }
+
+    @include u.breakpoint(large) {
+      grid-column: 1 / 6;
+      grid-row: 1;
+      justify-self: unset;
+    }
+  }
+
+  &__title {
+  }
+
+  &__title-span {
+    color: var(--clr-orange);
+    text-shadow: 2px 3px 3px hsla(0, 0%, 0%, 0.5);
+  }
+
+  &__description {
+  }
+
+  &.headphones {
+    padding-top: 0;
+
+    @include u.breakpoint(small) {
+      padding-bottom: u.rem(120);
+    }
+
+    @include u.breakpoint(large) {
+      padding-bottom: u.rem(160);
+    }
+  }
+
+  &.product-detail {
+    padding-top: 0;
+
+    @include u.breakpoint(small) {
+      padding-bottom: u.rem(120);
+    }
+
+    @include u.breakpoint(large) {
+      padding-bottom: u.rem(160);
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@use '../util/' as u;
+
+.button {
+  font-size: u.rem(13);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.077em;
+  width: u.rem(160);
+  height: u.rem(48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  text-transform: uppercase;
+
+  &.btn-one {
+    background-color: var(--button-one-bg);
+    color: var(--button-one-text);
+    // box-shadow: 0 4px 8px hsla(22, 65%, 57%, 0.4);
+    filter: drop-shadow(5px 5px 5px hsla(22, 65%, 57%, 0.4));
+
+    &:hover {
+      background-color: var(--button-one-bg-hover);
+    }
+
+    &.black {
+      background-color: var(--button-one-black-bg);
+      //box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.4);
+      filter: drop-shadow(5px 5px 5px hsla(0, 0%, 0%, 0.4));
+
+      &:hover {
+        background-color: var(--button-one-black-bg-hover);
+      }
+    }
+  }
+
+  &.btn-three {
+    display: inline-flex;
+    gap: u.rem(13);
+    width: unset;
+    height: unset;
+    background: none;
+    color: var(--button-three-text);
+
+    &:hover {
+      color: var(--button-three-text-hover);
+    }
+  }
+}
+
+.backBtn {
+  font-size: u.rem(15);
+  font-weight: 500;
+  line-height: 1.67;
+  background: none;
+  color: var(--clr-body-text);
+
+  &:hover {
+    color: var(--clr-orange);
+  }
+}
+
+.checkoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: u.rem(48);
+  font-size: u.rem(13);
+  font-weight: 700;
+  letter-spacing: 0.077em;
+  text-transform: uppercase;
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-light-orange);
+  }
+}

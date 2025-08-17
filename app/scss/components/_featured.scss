@@ -1,0 +1,182 @@
+@use '../util' as u;
+
+.featured {
+  &__wrapper {
+    display: grid;
+    gap: u.rem(24);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(32);
+    }
+
+    @include u.breakpoint(small) {
+      gap: u.rem(48);
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(32);
+    align-items: center;
+
+    border-radius: u.rem(8);
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+  }
+
+  &__content-wrapper:nth-child(1) {
+    padding: u.rem(55) u.rem(24);
+    background-image: url(/assets/shared/desktop/bg-circles-pattern.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -275%;
+    background-size: u.rem(558) u.rem(558);
+
+    @include u.breakpoint(small) {
+      gap: u.rem(56);
+      padding-block: u.rem(52) u.rem(64);
+      background-position-y: 130%;
+      background-size: u.rem(944) u.rem(944);
+    }
+
+    @include u.breakpoint(large) {
+      position: relative;
+      flex-direction: row;
+      height: u.rem(560);
+      background-position-x: -93%;
+      background-position-y: top;
+      overflow: hidden;
+    }
+  }
+
+  &__image-speaker {
+    width: auto;
+    height: u.rem(207);
+
+    @include u.breakpoint(small) {
+      height: u.rem(237);
+    }
+
+    @include u.breakpoint(large) {
+      position: absolute;
+      top: u.rem(90);
+      left: u.rem(117);
+      height: u.rem(493);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(24);
+    align-items: center;
+    text-align: center;
+
+    @include u.breakpoint(small) {
+      max-width: u.rem(349);
+    }
+
+    @include u.breakpoint(large) {
+      position: absolute;
+      top: u.rem(115);
+      right: 0;
+      transform: translateX(u.rem(-95));
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  &__title {
+  }
+
+  &__description {
+    @include u.breakpoint(small) {
+      margin-bottom: u.rem(16);
+    }
+  }
+
+  &__cta-btn {
+  }
+
+  &__content-wrapper:nth-child(2) {
+    align-items: flex-start;
+    padding: u.rem(101) u.rem(24);
+    background-color: var(--clr-grey);
+    background-image: url(/assets/home/mobile/image-speaker-zx7.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: u.rem(320);
+
+    @include u.breakpoint(small) {
+      background-image: url(/assets/home/tablet/image-speaker-zx7.jpg);
+    }
+
+    @include u.breakpoint(large) {
+      background-image: url(/assets/home/desktop/image-speaker-zx7.jpg);
+    }
+  }
+
+  &__content-wrapper:nth-child(2) > &__content {
+    align-items: flex-start;
+
+    @include u.breakpoint(small) {
+      padding-inline: u.rem(62);
+    }
+
+    @include u.breakpoint(large) {
+      padding-inline: u.rem(95);
+      position: static;
+      transform: none;
+    }
+  }
+
+  &__content-wrapper:nth-child(3) {
+    background: transparent;
+    padding: 0;
+    gap: u.rem(24);
+
+    @include u.breakpoint(small) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: u.rem(11);
+    }
+
+    @include u.breakpoint(large) {
+      gap: u.rem(30);
+    }
+  }
+
+  &__content-wrapper:nth-child(3) > &__image {
+    width: 100%;
+    max-height: u.rem(400);
+    border-radius: u.rem(8);
+
+    @include u.breakpoint(small) {
+      max-height: u.rem(320);
+    }
+  }
+
+  &__content-wrapper:nth-child(3) > &__content {
+    width: 100%;
+    min-height: u.rem(200);
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: u.rem(24);
+    border-radius: u.rem(8);
+    background-color: var(--clr-very-light-grey);
+
+    @include u.breakpoint(small) {
+      padding-left: u.rem(40);
+      max-width: unset;
+      height: u.rem(320);
+    }
+
+    @include u.breakpoint(large) {
+      position: static;
+      padding-inline: u.rem(95);
+      transform: none;
+    }
+  }
+}

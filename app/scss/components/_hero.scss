@@ -1,0 +1,67 @@
+@use '../util' as u;
+
+.hero {
+  width: 100%;
+  height: u.rem(510);
+  background-color: var(--clr-dark-grey);
+  background-image: url(/assets/home/mobile/image-header.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+
+  @include u.breakpoint(small) {
+    height: u.rem(640);
+    background-image: url(/assets/home/tablet/image-header.jpg);
+  }
+
+  @include u.breakpoint(large) {
+    background-image: url(/assets/home/desktop/image-hero.jpg);
+  }
+
+  &__wrapper {
+    display: grid;
+    place-items: center;
+    height: 100%;
+
+    @include u.breakpoint(large) {
+      place-items: unset;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__content {
+    display: grid;
+    gap: u.rem(24);
+    place-items: center;
+    text-align: center;
+    max-width: u.rem(379);
+
+    @include u.breakpoint(large) {
+      place-items: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+  &__title {
+  }
+  &__title-span {
+    display: block;
+    font-size: u.rem(14);
+    font-weight: 400;
+    letter-spacing: 0.714em;
+    margin-bottom: u.rem(16);
+    color: var(--clr-half-white);
+  }
+  &__description {
+    color: var(--text-light);
+    margin-bottom: u.rem(4);
+
+    @include u.breakpoint(small) {
+      max-width: u.rem(349);
+    }
+  }
+  &__cta-btn {
+  }
+}

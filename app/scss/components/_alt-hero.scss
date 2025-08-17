@@ -1,0 +1,17 @@
+@use '../util' as u;
+
+.alt-hero {
+  background-color: var(--clr-dark-grey);
+  padding-block: u.rem(36);
+
+  @include u.breakpoint(small) {
+    padding-block: u.rem(101);
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__title {
+  }
+}
