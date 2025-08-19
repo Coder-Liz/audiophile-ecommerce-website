@@ -175,25 +175,6 @@
     }
   }
 
-  // input[type='radio'] {
-  //   accent-color: var(--clr-orange);
-  // }
-
-  // input[type='radio'] {
-  //   appearance: none;
-  //   width: 20px;
-  //   height: 20px;
-  //   border: 2px solid black;
-  //   border-radius: 50%;
-  //   outline: none;
-  //   background-color: white;
-  //   cursor: pointer;
-  // }
-  input[type='radio']:checked {
-    background-color: var(--clr-orange);
-    border: 2px solid var(--clr-orange);
-  }
-
   input[type='radio'] {
     appearance: none;
     width: 20px;
@@ -218,6 +199,10 @@
 
   input[type='radio']:checked::before {
     transform: scale(1);
+  }
+
+  input[type='radio']:checked {
+    border: 2px solid var(--clr-orange);
   }
 
   &__cash-on-delivery {
