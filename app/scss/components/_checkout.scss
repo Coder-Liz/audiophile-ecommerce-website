@@ -175,36 +175,6 @@
     }
   }
 
-  // input[type='radio'] {
-  //   appearance: none;
-  //   width: 20px;
-  //   height: 20px;
-  //   border: 2px solid var(--clr-black);
-  //   border-radius: 50%;
-  //   background-color: var(--clr-white);
-  //   cursor: pointer;
-  //   display: grid;
-  //   place-content: center;
-  // }
-
-  // input[type='radio']::before {
-  //   content: '';
-  //   width: 12px;
-  //   height: 12px;
-  //   border-radius: 50%;
-  //   background: var(--clr-orange, orange);
-  //   transform: scale(0);
-  //   transition: 120ms transform ease-in-out;
-  // }
-
-  // input[type='radio']:checked::before {
-  //   transform: scale(1);
-  // }
-
-  // input[type='radio']:checked {
-  //   border: 2px solid var(--clr-orange);
-  // }
-
   input[type='radio'] {
     appearance: none;
     width: 20px;
